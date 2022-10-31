@@ -60,3 +60,39 @@ return id, nameP, price, avaliable
 }
 OrderProduct()
 
+function OrderPrice(){
+    arraySupId = []
+    arraySupName = []
+    arraySupPrice = []
+    arraySupAvaliable = []
+    counterArraySup = 0
+    
+    var bigPrice = 0
+    for (var i = 0; i < id.length; i ++) {
+        bigPrice = price[i]
+    for(var i2 = 0; i2 < id.length; i2 ++){
+        if(bigPrice < price[i2]){
+            bigPrice = price[i2]
+        }
+    }
+    for (var i3 = 0; i3 < id.length ; i3++){
+        if(bigPrice == price[i3]){
+        arraySupId[counterId] = parseInt(id[i3])
+        arraySupName[counterId] = nameP[i3]
+        arraySupPrice[counterId] = parseInt(price[i3])
+        arraySupAvaliable[counterId] = avaliable[i3]
+        counterArraySup++
+        price[i3] = 0
+        }
+    }    
+}
+for(var i = 0 ; i < arraySupId ; i++) {
+    console.log(arraySupId[i], "--", arraySupName[i], "--", arraySupPrice[i], "--", arraySupAvaliable[i])
+}
+
+id = arraySupId
+nameP = arraySupName
+price =  arraySupPrice
+avaliable = arraySupAvaliable
+}
+OrderPrice()
