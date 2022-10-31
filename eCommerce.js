@@ -96,3 +96,40 @@ price =  arraySupPrice
 avaliable = arraySupAvaliable
 }
 OrderPrice()
+
+function OrderAvaliable(){
+    arraySupId = []
+    arraySupName = []
+    arraySupPrice = []
+    arraySupAvaliable = []
+    counterArraySup = 0
+    
+    var bigAvaliable = 0
+    for (var i = 0; i < id.length; i ++) {
+        bigAvaliable = price[i]
+    for(var i2 = 0; i2 < id.length; i2 ++){
+        if(bigAvaliable < avaliable[i2]){
+            bigAvaliable = parseInt(avaliable[i2])
+        }
+    }
+    for (var i3 = 0; i3 < id.length ; i3++){
+        if(bigAvaliable == avaliable[i3]){
+        arraySupId[counterId] = parseInt(id[i3])
+        arraySupName[counterId] = nameP[i3]
+        arraySupPrice[counterId] = parseInt(price[i3])
+        arraySupAvaliable[counterId] = avaliable[i3]
+        counterArraySup++
+        avaliable[i3] = 0
+        }
+    }    
+}
+for(var i = 0 ; i < arraySupId.length ; i++) {
+    console.log(arraySupId[i], "--", arraySupName[i], "--", arraySupPrice[i], "--", arraySupAvaliable[i])
+}
+
+id = arraySupId
+nameP = arraySupName
+price =  arraySupPrice
+avaliable = arraySupAvaliable
+}
+OrderAvaliable()
